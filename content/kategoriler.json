@@ -1,0 +1,36 @@
+{
+  "kategoriler": [
+    {
+      "slug": "pide-lahmacun-kutulari",
+      "ad": "Pide ve Lahmacun Kutuları"
+    },
+    {
+      "slug": "pizza-kutulari",
+      "ad": "Pizza Kutuları"
+    },
+    {
+      "slug": "karton-koli-kutular",
+      "ad": "Karton Koli ve Kutular"
+    },
+    {
+      "slug": "kese-kagitlari",
+      "ad": "Kese Kâğıtları"
+    },
+    {
+      "slug": "ambalaj-sarma-kagitlari",
+      "ad": "Ambalaj ve Sarma Kâğıtları"
+    },
+    {
+      "slug": "selefonlu-ambalaj-kagitlari",
+      "ad": "Selefonlu Ambalaj Kâğıtları"
+    },
+    {
+      "slug": "kraft-cantalar",
+      "ad": "Kraft Çantalar"
+    },
+    {
+      "slug": "ayran-viyol-kartonlari",
+      "ad": "Ayran Viyol Kartonları"
+    }
+  ]
+}

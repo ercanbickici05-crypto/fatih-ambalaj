@@ -1,0 +1,35 @@
+{
+  "iletisim": {
+    "konum": {
+      "enlem": 40.649745,
+      "boylam": 35.821254
+    },
+    "fabrikaAdres": "",
+    "whatsapp": "905079062007",
+    "haritaLinki": "https://www.google.com/maps/dir//Fatih+Ambalaj,+G%C3%B6kmedrese,+Mustafa+Kemal+Pa%C5%9Fa+Cd.+No:131,+05100+Amasya+Merkez%2FAmasya/@40.6404963,35.8012684,15z/data=!4m8!4m7!1m0!1m5!1m1!1s0x40876e527c5ba829:0x7fa225e620184669!2m2!1d35.821254!2d40.649745?entry=ttu",
+    "instagram": "fatihambalaj",
+    "telefon2": "0507 906 20 07",
+    "telefon": "0358 212 99 51",
+    "eposta": "",
+    "calismaSaatleri": "Hafta içi 08:3/18:30 ",
+    "adres": "Gökmedrese Mahallesi, Mustafa Kemal Paşa Caddesi, No: 131, Amasya Merkez / Amasya",
+    "fabrikaHaritaLinki": "https://www.google.com/maps?q=40.59739685058594,35.81374740600586&z=17&hl=tr"
+  },
+  "firmaAdi": "Fatih Ambalaj",
+  "anaSayfaGorseli": {
+    "src": "/img/urunler/sarma-kagidi-logolu.webp",
+    "alt": ""
+  },
+  "baskiGorseli": {
+    "src": "/img/urunler/kese-kagidi-logolu.webp",
+    "alt": "Fatih Ambalaj logosu basılmış kraft kese kâğıtları"
+  },
+  "siteUrl": "",
+  "kurulusYili": 2000,
+  "logo": "/img/logo.png",
+  "logoAcik": "/img/logo-acik.png",
+  "uretimFotograflari": [],
+  "hizmetBolgesi": "Amasya ve çevre iller",
+  "favicon": "/img/logo-fa.png",
+  "sehir": "Amasya"
+}

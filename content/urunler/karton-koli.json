@@ -1,0 +1,32 @@
+{
+  "yayinda": true,
+  "sira": 30,
+  "slug": "karton-koli",
+  "ad": "Karton Koli",
+  "kategori": "karton-koli-kutular",
+  "kisaAciklama": "Ürünlerinizin depolanması ve sevkiyatı için karton koli.",
+  "aciklama": [
+    "Ürünlerin depolanması, taşınması ve sevkiyatı için karton koli.",
+    "İhtiyacınıza göre ölçüde ve isteğe bağlı baskılı olarak üretilebilir."
+  ],
+  "kullanimAlanlari": [
+    "Perakende işletmeleri",
+    "Fırınlar ve pastaneler",
+    "Depolama ve sevkiyat"
+  ],
+  "ozellikler": {
+    "olcu": [],
+    "malzeme": [],
+    "baski": []
+  },
+  "gorseller": [
+    {
+      "src": "/img/urunler/karton-koli-logolu.webp",
+      "alt": "Fatih Ambalaj yazılı farklı boyutlarda karton koliler"
+    },
+    {
+      "src": "/img/urunler/karton-koli-1.webp",
+      "alt": "Ön yüzü Fatih Ambalaj logolu, kapakları açık karton koli"
+    }
+  ]
+}

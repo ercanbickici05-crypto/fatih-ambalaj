@@ -1,0 +1,9 @@
+Görseller bu klasöre konur (bu dosya siteye kopyalanmaz).
+
+  public/img/logo.svg          → Logo (site.config.js → logo: "/img/logo.svg")
+  public/img/urunler/          → Ürün fotoğrafları (data/urunler.js → gorseller)
+  public/img/uretim/           → Üretim fotoğrafları (site.config.js → uretimFotograflari)
+
+Öneri: Fotoğrafları 1600 px genişlikte WebP olarak kaydedin (~150–300 KB).
+Ürün fotoğrafları için 4:3 yatay oran en iyi sonucu verir.
+Dosya adlarında Türkçe karakter ve boşluk kullanmayın (örn. pizza-kutusu-1.webp).

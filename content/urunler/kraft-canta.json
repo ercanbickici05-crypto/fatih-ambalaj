@@ -1,0 +1,29 @@
+{
+  "yayinda": true,
+  "sira": 70,
+  "slug": "kraft-canta",
+  "ad": "Kraft Çanta",
+  "kategori": "kraft-cantalar",
+  "kisaAciklama": "Mağaza ve paket servis için saplı kraft kâğıt çanta.",
+  "aciklama": [
+    "Mağaza satışları ve paket servis siparişleri için saplı kraft kâğıt çanta.",
+    "Logolu baskı ile müşterinizin elinde markanızı taşır. Ölçü ve baskı seçenekleri teklif sırasında belirlenir."
+  ],
+  "kullanimAlanlari": [
+    "Perakende işletmeleri",
+    "Kafeler",
+    "Pastaneler",
+    "Restoranlar"
+  ],
+  "ozellikler": {
+    "olcu": [],
+    "malzeme": [],
+    "baski": []
+  },
+  "gorseller": [
+    {
+      "src": "/img/urunler/kraft-canta-logolu.webp",
+      "alt": "Fatih Ambalaj logolu burgu saplı üç kraft çanta"
+    }
+  ]
+}

@@ -1,0 +1,215 @@
+# =====================================================================
+#  YÖNETİM PANELİ AYARLARI (Decap CMS)
+#  Panel adresi: <site>/admin/
+#  Kurulum adımları README.md → "Yönetim paneli" bölümünde.
+# =====================================================================
+
+backend:
+  name: github
+  # Sitenin GitHub deposu: "kullanici-adi/depo-adi". Kurulumda değiştirilecek.
+  repo: ercanbickici05-crypto/fatih-ambalaj
+  branch: main
+  commit_messages:
+    create: "{{collection}}: \"{{slug}}\" eklendi"
+    update: "{{collection}}: \"{{slug}}\" güncellendi"
+    delete: "{{collection}}: \"{{slug}}\" silindi"
+    uploadMedia: "Görsel yüklendi: {{path}}"
+    deleteMedia: "Görsel silindi: {{path}}"
+
+# Bilgisayarda "npm run panel" ile çalışırken değişiklikler doğrudan dosyalara yazılır.
+local_backend: true
+
+locale: tr
+logo_url: /img/logo.png
+publish_mode: simple
+
+media_folder: public/img/urunler
+public_folder: /img/urunler
+
+collections:
+  # ------------------------------------------------------------------
+  - name: urunler
+    label: Ürünler
+    label_singular: Ürün
+    description: "Sitedeki ürünler. Liste, sıra numarasına göre (küçükten büyüğe) gösterilir."
+    folder: content/urunler
+    format: json
+    extension: json
+    create: true
+    delete: true
+    slug: "{{fields.slug}}"
+    identifier_field: ad
+    summary: "{{sira}} · {{ad}}"
+    sortable_fields: [sira, ad]
+    editor:
+      preview: false
+    fields:
+      - label: Ürün adı
+        name: ad
+        widget: string
+      - label: Sayfa adresi
+        name: slug
+        widget: string
+        hint: "Adres çubuğunda görünür: /urunler/bu-ad/. Küçük harf, Türkçe karaktersiz, boşluk yerine tire. Örn: pide-kutusu. Yayındaki bir ürünün adresini değiştirmeyin; paylaşılmış bağlantılar bozulur."
+        pattern: ['^[a-z0-9]+(-[a-z0-9]+)*$', "Yalnızca küçük harf (ç, ğ, ı, ö, ş, ü olmadan), rakam ve tire kullanın. Örn: pide-kutusu"]
+      - label: Sitede göster
+        name: yayinda
+        widget: boolean
+        default: true
+        required: false
+        hint: "Kapatırsanız ürün silinmeden siteden gizlenir."
+      - label: Sıra
+        name: sira
+        widget: number
+        value_type: int
+        default: 100
+        hint: "Küçük sayı önde görünür (10, 20, 30…)."
+      - label: Kategori
+        name: kategori
+        widget: relation
+        collection: ayarlar
+        file: kategoriler
+        search_fields: ["kategoriler.*.ad"]
+        value_field: "kategoriler.*.slug"
+        display_fields: ["kategoriler.*.ad"]
+      - label: Kısa açıklama
+        name: kisaAciklama
+        widget: text
+        hint: "Ürün kartında ve Google sonuçlarında görünür. Tek cümle yeterli."
+      - label: Açıklama
+        name: aciklama
+        widget: list
+        label_singular: paragraf
+        collapsed: false
+        hint: "Ürün sayfasındaki paragraflar."
+        field: { label: Paragraf, name: paragraf, widget: text }
+      - label: Kullanım alanları
+        name: kullanimAlanlari
+        widget: list
+        required: false
+        label_singular: alan
+        collapsed: false
+        field: { label: Kullanım alanı, name: alan, widget: string }
+      - label: Teknik özellikler
+        name: ozellikler
+        widget: object
+        collapsed: true
+        required: false
+        hint: "Yalnızca doğruladığınız bilgileri yazın. Boş bırakılan başlıklar sitede görünmez."
+        fields:
+          - { label: Ölçüler, name: olcu, widget: list, required: false, collapsed: false, label_singular: ölçü, field: { label: Ölçü, name: deger, widget: string, hint: "Örn: 30 x 30 cm" } }
+          - { label: Malzeme, name: malzeme, widget: list, required: false, collapsed: false, label_singular: malzeme, field: { label: Malzeme, name: deger, widget: string } }
+          - { label: Baskı seçenekleri, name: baski, widget: list, required: false, collapsed: false, label_singular: seçenek, field: { label: Seçenek, name: deger, widget: string } }
+      - label: Fotoğraflar
+        name: gorseller
+        widget: list
+        required: false
+        label_singular: fotoğraf
+        summary: "{{fields.alt}}"
+        hint: "İlk fotoğraf kartta ve sayfanın başında görünür. Yatay (4:3) fotoğraflar en iyi sonucu verir; mümkünse 1600 px genişlikte, 400 KB altında yükleyin."
+        fields:
+          - { label: Fotoğraf, name: src, widget: image, choose_url: false }
+          - { label: "Fotoğrafta ne var? (görme engelliler ve Google için)", name: alt, widget: string, hint: "Örn: Logolu kraft pizza kutuları" }
+      - label: İlgili ürünler
+        name: ilgili
+        widget: relation
+        collection: urunler
+        search_fields: [ad]
+        value_field: slug
+        display_fields: [ad]
+        multiple: true
+        required: false
+        hint: "Boş bırakırsanız benzer ürünler otomatik seçilir."
+
+  # ------------------------------------------------------------------
+  - name: ayarlar
+    label: Ayarlar
+    editor:
+      preview: false
+    files:
+      - name: genel
+        label: Firma ve iletişim bilgileri
+        file: content/ayarlar.json
+        fields:
+          - { label: Firma adı, name: firmaAdi, widget: string }
+          - { label: Kuruluş yılı, name: kurulusYili, widget: number, value_type: int }
+          - { label: Şehir, name: sehir, widget: string }
+          - { label: Hizmet bölgesi, name: hizmetBolgesi, widget: string, hint: "Örn: Amasya ve çevre iller" }
+          - label: Site adresi
+            name: siteUrl
+            widget: string
+            required: false
+            hint: "Yayındaki alan adı, sonunda / olmadan. Örn: https://www.fatihambalaj.com — Google haritası (sitemap) için gerekli."
+            pattern: ['^$|^https?://[^/\s]+$', "https:// ile başlamalı, sonunda / olmamalı."]
+          - label: İletişim
+            name: iletisim
+            widget: object
+            fields:
+              - { label: Sabit telefon, name: telefon, widget: string, required: false, hint: "Ekranda görüneceği gibi yazın. Örn: 0358 212 99 51" }
+              - { label: İkinci telefon, name: telefon2, widget: string, required: false }
+              - { label: WhatsApp numarası, name: whatsapp, widget: string, required: false, hint: "Örn: 0507 906 20 07. Boşsa WhatsApp butonları gizlenir." }
+              - { label: Dükkân adresi, name: adres, widget: text, required: false }
+              - { label: Dükkân Google Haritalar bağlantısı, name: haritaLinki, widget: string, required: false }
+              - label: Dükkân konumu (koordinat)
+                name: konum
+                widget: object
+                collapsed: true
+                required: false
+                fields:
+                  - { label: Enlem, name: enlem, widget: number, value_type: float, required: false }
+                  - { label: Boylam, name: boylam, widget: number, value_type: float, required: false }
+              - { label: Fabrika adresi, name: fabrikaAdres, widget: text, required: false }
+              - { label: Fabrika Google Haritalar bağlantısı, name: fabrikaHaritaLinki, widget: string, required: false }
+              - { label: E-posta, name: eposta, widget: string, required: false }
+              - { label: Instagram kullanıcı adı, name: instagram, widget: string, required: false, hint: "@ olmadan. Örn: fatihambalaj" }
+              - { label: Çalışma saatleri, name: calismaSaatleri, widget: string, required: false, hint: "Örn: Pazartesi – Cumartesi 08:00 – 18:00" }
+          - label: Ana sayfa büyük görseli
+            name: anaSayfaGorseli
+            widget: object
+            required: false
+            fields:
+              - { label: Görsel, name: src, widget: image, required: false, choose_url: false }
+              - { label: Görselde ne var?, name: alt, widget: string, required: false }
+          - label: Özel baskı görseli
+            name: baskiGorseli
+            widget: object
+            required: false
+            fields:
+              - { label: Görsel, name: src, widget: image, required: false, choose_url: false }
+              - { label: Görselde ne var?, name: alt, widget: string, required: false }
+          - label: Üretimden fotoğraflar
+            name: uretimFotograflari
+            widget: list
+            required: false
+            label_singular: fotoğraf
+            hint: "Atölye ve makinelerden gerçek fotoğraflar. Boşsa ana sayfadaki “Üretimden” bölümü görünmez."
+            fields:
+              - { label: Fotoğraf, name: src, widget: image, choose_url: false, media_folder: /public/img/uretim, public_folder: /img/uretim }
+              - { label: Fotoğrafta ne var?, name: alt, widget: string }
+          - label: Logo
+            name: logo
+            widget: image
+            required: false
+            choose_url: false
+            media_folder: /public/img
+            public_folder: /img
+          - { label: Koyu zemin için açık renkli logo, name: logoAcik, widget: image, required: false, choose_url: false, media_folder: /public/img, public_folder: /img }
+          - { label: Tarayıcı sekmesi simgesi, name: favicon, widget: image, required: false, choose_url: false, media_folder: /public/img, public_folder: /img }
+
+      - name: kategoriler
+        label: Kategoriler
+        file: content/kategoriler.json
+        fields:
+          - label: Kategoriler
+            name: kategoriler
+            widget: list
+            label_singular: kategori
+            summary: "{{fields.ad}}"
+            hint: "Sıralama burada nasıl ise sitede de öyle görünür. Ürünü olan bir kategoriyi silmeyin."
+            fields:
+              - { label: Kategori adı, name: ad, widget: string }
+              - label: Adres adı
+                name: slug
+                widget: string
+                hint: "Küçük harf, Türkçe karaktersiz, tire ile. Örn: pizza-kutulari"
+                pattern: ['^[a-z0-9]+(-[a-z0-9]+)*$', "Yalnızca küçük harf, rakam ve tire."]

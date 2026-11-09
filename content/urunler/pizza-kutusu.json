@@ -1,0 +1,28 @@
+{
+  "ad": "Pizza Kutusu",
+  "sira": 20,
+  "kategori": "pizza-kutulari",
+  "gorseller": [
+    {
+      "src": "/img/urunler/pizza-kutusu-logolu.webp",
+      "alt": "Kapağı Fatih Ambalaj logolu kraft pizza kutuları"
+    }
+  ],
+  "slug": "pizza-kutusu",
+  "aciklama": [
+    "Pizzacıların paket servis ve gel-al siparişleri için kare formlu karton pizza kutusu.",
+    "Kapak yüzeyi logo ve kampanya baskısı için geniş bir alan sunar. Ölçü ve baskı seçenekleri teklif sırasında netleştirilir."
+  ],
+  "yayinda": true,
+  "kisaAciklama": "Pizzacılar için kare formlu, baskıya uygun karton kutu.",
+  "ozellikler": {
+    "olcu": [],
+    "malzeme": [],
+    "baski": []
+  },
+  "kullanimAlanlari": [
+    "Pizzacılar",
+    "Restoranlar",
+    "Kafeler"
+  ]
+}

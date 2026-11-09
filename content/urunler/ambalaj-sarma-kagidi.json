@@ -1,0 +1,34 @@
+{
+  "yayinda": true,
+  "sira": 50,
+  "slug": "ambalaj-sarma-kagidi",
+  "ad": "Ambalaj ve Sarma Kâğıdı",
+  "kategori": "ambalaj-sarma-kagitlari",
+  "kisaAciklama": "Dürüm, sandviç, kasap ve ürün sarma işlemleri için ambalaj kâğıdı.",
+  "aciklama": [
+    "Dürüm, sandviç, unlu mamul, et ve çeşitli ürünlerin sarılması için ambalaj kâğıdı. Kasaplar için desenli kasap kâğıdı da bu grupta yer alır.",
+    "Logolu baskı ile tezgâhta ve paket serviste işletmenizi öne çıkarabilirsiniz."
+  ],
+  "kullanimAlanlari": [
+    "Restoranlar",
+    "Kasaplar",
+    "Kafeler",
+    "Fırınlar",
+    "Perakende işletmeleri"
+  ],
+  "ozellikler": {
+    "olcu": [],
+    "malzeme": [],
+    "baski": []
+  },
+  "gorseller": [
+    {
+      "src": "/img/urunler/durum-kagidi-logolu.webp",
+      "alt": "Fatih Ambalaj baskılı dürüm kâğıtları ve kâğıda sarılı dürüm"
+    },
+    {
+      "src": "/img/urunler/sarma-kagidi-logolu.webp",
+      "alt": "Fatih Ambalaj logolu beyaz sarma kâğıdı rulosu, yaprakları ve sarılmış paket"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "yayinda": true,
+  "sira": 60,
+  "slug": "selefonlu-ambalaj-kagidi",
+  "ad": "Selefonlu Ambalaj Kâğıdı",
+  "kategori": "selefonlu-ambalaj-kagitlari",
+  "kisaAciklama": "Yüzeyi selefon kaplı ambalaj kâğıdı.",
+  "aciklama": [
+    "Yüzeyi selefon ile kaplanmış ambalaj kâğıdı.",
+    "Kullanım amacınıza göre ölçü ve baskı seçenekleri teklif sırasında birlikte netleştirilir."
+  ],
+  "kullanimAlanlari": [
+    "Restoranlar",
+    "Pide ve lahmacun salonları",
+    "Pastaneler",
+    "Perakende işletmeleri"
+  ],
+  "ozellikler": {
+    "olcu": [],
+    "malzeme": [],
+    "baski": []
+  },
+  "gorseller": [
+    {
+      "src": "/img/urunler/sarma-kagidi-logolu.webp",
+      "alt": "Fatih Ambalaj logolu beyaz sarma kâğıdı rulosu, yaprakları ve sarılmış paket"
+    }
+  ]
+}

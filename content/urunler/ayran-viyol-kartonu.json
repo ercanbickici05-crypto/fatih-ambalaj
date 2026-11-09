@@ -1,0 +1,29 @@
+{
+  "yayinda": true,
+  "sira": 80,
+  "slug": "ayran-viyol-kartonu",
+  "ad": "Ayran Viyol Kartonu",
+  "kategori": "ayran-viyol-kartonlari",
+  "kisaAciklama": "Paket serviste ayran bardaklarını sabit tutan karton viyol.",
+  "aciklama": [
+    "Paket servis siparişlerinde ayran bardaklarının devrilmeden taşınmasına yardımcı olan karton viyol.",
+    "Göz sayısı ve ölçü bilgileri teklif sırasında birlikte netleştirilir."
+  ],
+  "kullanimAlanlari": [
+    "Pide ve lahmacun salonları",
+    "Kebap salonları",
+    "Restoranlar",
+    "Paket servis"
+  ],
+  "ozellikler": {
+    "olcu": [],
+    "malzeme": [],
+    "baski": []
+  },
+  "gorseller": [
+    {
+      "src": "/img/urunler/ayran-viyol-logolu.webp",
+      "alt": "Fatih Ambalaj logolu 12 gözlü ayran viyol kartonu, iki ayranla"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "yayinda": true,
+  "sira": 10,
+  "slug": "pide-kutusu",
+  "ad": "Pide Kutusu",
+  "kategori": "pide-lahmacun-kutulari",
+  "kisaAciklama": "Pide salonlarının paket servisi için uzun formlu karton kutu.",
+  "aciklama": [
+    "Pidenin paket serviste düzgün ve derli toplu taşınması için uzun formlu karton kutu.",
+    "İşletmenizin logosu ve iletişim bilgileriyle baskılı olarak üretilebilir; ölçü ve baskı seçenekleri teklif sırasında netleştirilir."
+  ],
+  "kullanimAlanlari": [
+    "Pide ve lahmacun salonları",
+    "Restoranlar",
+    "Paket servis"
+  ],
+  "ozellikler": {
+    "olcu": [],
+    "malzeme": [],
+    "baski": []
+  },
+  "gorseller": [
+    {
+      "src": "/img/urunler/pide-kutusu-logolu.webp",
+      "alt": "Fatih Ambalaj logolu uzun kraft kutu, açık ve kapalı"
+    }
+  ]
+}

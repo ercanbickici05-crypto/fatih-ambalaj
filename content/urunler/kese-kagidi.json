@@ -1,0 +1,33 @@
+{
+  "yayinda": true,
+  "sira": 40,
+  "slug": "kese-kagidi",
+  "ad": "Kese Kâğıdı",
+  "kategori": "kese-kagitlari",
+  "kisaAciklama": "Fırın, pastane ve perakende satışları için kese kâğıdı.",
+  "aciklama": [
+    "Fırın, pastane ve perakende satışlarda ürünlerin pratik şekilde paketlenmesi için kese kâğıdı.",
+    "İşletmenizin logosuyla baskılı kese kâğıtları, her satışta markanızın müşteriyle birlikte gitmesini sağlar."
+  ],
+  "kullanimAlanlari": [
+    "Fırınlar",
+    "Pastaneler",
+    "Perakende işletmeleri",
+    "Kafeler"
+  ],
+  "ozellikler": {
+    "olcu": [],
+    "malzeme": [],
+    "baski": []
+  },
+  "gorseller": [
+    {
+      "src": "/img/urunler/kese-kagidi-logolu.webp",
+      "alt": "Fatih Ambalaj logolu kraft kese kâğıtları, birinde poğaça"
+    },
+    {
+      "src": "/img/urunler/kese-kagidi-1.webp",
+      "alt": "Fatih Ambalaj logolu kraft kese kâğıdında ekmekler"
+    }
+  ]
+}
