@@ -1,0 +1,14 @@
+{
+  "name": "fatih-ambalaj-web",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Fatih Ambalaj web sitesi (statik, bağımlılıksız)",
+  "scripts": {
+    "build": "node scripts/build.js",
+    "dev": "node scripts/serve.js",
+    "panel": "node scripts/panel.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

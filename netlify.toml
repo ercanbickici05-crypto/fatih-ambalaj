@@ -1,0 +1,14 @@
+# Netlify yayın ayarları: her değişiklikte site "npm run build" ile derlenir
+# ve dist/ klasörü yayınlanır.
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+# Yönetim paneli arama motorlarında görünmesin
+[[headers]]
+  for = "/admin/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
