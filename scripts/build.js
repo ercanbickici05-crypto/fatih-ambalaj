@@ -6,6 +6,7 @@
 const fs = require("fs");
 const path = require("path");
 const crypto = require("crypto");
+const { gorselleriKucult, sharpVar } = require("./gorsel");
 
 const ROOT = path.join(__dirname, "..");
 const DIST = path.join(ROOT, "dist");
@@ -98,7 +99,7 @@ function makeCtx({ cfg, data }) {
     const p = path.join(ROOT, "public", g.src);
     if (!fs.existsSync(p)) return uyarilar.push(`${nerede}: görsel bulunamadı → public${g.src}`);
     const kb = fs.statSync(p).size / 1024;
-    if (kb > 400) uyarilar.push(`${nerede}: "${g.src}" ${Math.round(kb)} KB. Hızlı açılış için 1600 px genişlikte WebP olarak ~300 KB altına indirin.`);
+    if (kb > 400 && !sharpVar()) uyarilar.push(`${nerede}: "${g.src}" ${Math.round(kb)} KB. Hızlı açılış için 1600 px genişlikte WebP olarak ~300 KB altına indirin.`);
   };
   urunler.forEach((u) => (u.gorseller || []).forEach((g) => gorselKontrol(g, u.ad)));
   (cfg.uretimFotograflari || []).forEach((g) => gorselKontrol(g, "Üretim fotoğrafı"));
@@ -927,5 +928,20 @@ function build({ sessiz = false } = {}) {
   return ctx;
 }
 
-module.exports = { build, ROOT, DIST };
-if (require.main === module) build();
+// Derleme + büyük fotoğrafları küçültme (yayın derlemesi ve önizleme sunucusu bunu kullanır)
+async function tamDerle(secenek) {
+  const ctx = build(secenek);
+  const { atlandi, kucultulen } = await gorselleriKucult(DIST);
+  if (atlandi) console.log("ℹ Fotoğraf küçültme atlandı (sharp kurulu değil).\n");
+  else if (kucultulen.length) {
+    console.log(`✔ ${kucultulen.length} büyük fotoğraf yayın için küçültüldü:`);
+    kucultulen.forEach((s) => console.log("  • " + s));
+    console.log("");
+  }
+  return ctx;
+}
+
+module.exports = { build, tamDerle, ROOT, DIST };
+if (require.main === module) {
+  tamDerle().catch((e) => { console.error(e); process.exit(1); });
+}

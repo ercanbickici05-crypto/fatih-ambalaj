@@ -3,7 +3,7 @@
 const http = require("http");
 const fs = require("fs");
 const path = require("path");
-const { build, ROOT, DIST } = require("./build");
+const { tamDerle, ROOT, DIST } = require("./build");
 
 const PORT = Number(process.env.PORT) || 4321;
 const TYPES = {
@@ -16,8 +16,8 @@ const TYPES = {
 // Windows'ta derleme sırasında dosyaların kopyalanması da izleme olayı üretebilir;
 // derlemeden hemen sonraki olaylar yok sayılır (aksi hâlde sonsuz döngü oluşur).
 let sonDerleme = 0;
-function guvenliDerle() {
-  try { build(); } catch (e) { console.error("Derleme hatası:", e.message); }
+async function guvenliDerle() {
+  try { await tamDerle(); } catch (e) { console.error("Derleme hatası:", e.message); }
   sonDerleme = Date.now();
 }
 guvenliDerle();
